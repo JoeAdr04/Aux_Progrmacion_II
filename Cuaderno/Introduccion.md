@@ -70,6 +70,9 @@ Son representaciones graficas de los objetos, se concentra aen mostrac el nombre
 
 <img src="https://www.webyempresas.com/wp-content/uploads/2021/11/diagrama-de-clases-uml.jpg" width="720" height="480">
 
+<img src="Cuaderno\introduccion\Diagrama.jpeg" width="720" height="480">
+Cuaderno\introduccion\Diagrama.jpeg
+
 ## Abstraccion 
 Cada entidad puede ser clasificada, se puede obserbar o imaginar los atributos que tiene, un ejemplo comun es una persona:
 
@@ -77,4 +80,18 @@ Cada entidad puede ser clasificada, se puede obserbar o imaginar los atributos q
 
 De esta podemos sacar varios atriubutos, como el nombre, la edad, altura, peso, raza, genero, carnet, color de ojos, color de pelo, apodo, personalidad, etc....
 
-realizando la abstracion nos quedaria
+realizando la abstracion nos quedaria:
+
+```mermaid
+classDiagram
+    class Persona {
+        - nombre: str
+        - edad: int
+        - altura: double
+        - peso: double
+        - raza: str
+        - genero: str
+
+    }
+
+```
