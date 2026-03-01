@@ -28,7 +28,29 @@ Usa un mismo metodo para distintas tareas
 ### 4. Herecia
 Aprovecha el codigo que ya utilizaste o agrega nuevoas clases de manera mas cencillam reutiliza atributos y metodos
 
+## Conceptos importantes:
+### Clase
+Es un molde que sirve para crear varios objetos, extrae las caracteristicas principales de los objetos y apartir de ello crear nuevos con distintas caracteristicas.
+### Objeto 
+**Instancia de una clase** se crea apartir de una clase, este toma las caracteristicas y le da valores
+
+```mermaid
+classDiagram
+    class Gato {
+        -String nombre
+        -int edad
+        +Gato()
+    }
+
+```
+## Diagramas de clases
+Son representaciones graficas de los objetos, las
+
 ## Abstraccion 
 Cada entidad puede ser clasificada, se puede obserbar o imaginar los atributos que tiene, un ejemplo comun es una persona:
 
-<img src="https://media.istockphoto.com/id/1447925542/es/vector/hombre-de-negocios-de-pie-silueta-vectorial-aislada-vista-frontal-hombre-de-traje.jpg?s=612x612&w=0&k=20&c=mOLuMRZCHgEsXZ0KJ2Hm64EwNfmImR7OjT5KYIrACQA=" width="300" height="150">
+<img src="https://media.istockphoto.com/id/1447925542/es/vector/hombre-de-negocios-de-pie-silueta-vectorial-aislada-vista-frontal-hombre-de-traje.jpg?s=612x612&w=0&k=20&c=mOLuMRZCHgEsXZ0KJ2Hm64EwNfmImR7OjT5KYIrACQA=" width="300" height="600">
+
+De esta podemos sacar varios atriubutos, como el nombre, la edad, altura, peso, raza, genero, carnet, color de ojos, color de pelo, apodo, personalidad, etc....
+
+realizando la abstracion nos quedaria
