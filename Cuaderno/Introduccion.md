@@ -70,7 +70,7 @@ Son representaciones graficas de los objetos, se concentra aen mostrac el nombre
 
 <img src="https://www.webyempresas.com/wp-content/uploads/2021/11/diagrama-de-clases-uml.jpg" width="720" height="480">
 
-<img src="Cuaderno\introduccion\Diagrama.jpeg" width="720" height="480">
+<img src="introduccion\Diagrama.jpeg" width="720" height="480">
 Cuaderno\introduccion\Diagrama.jpeg
 
 ## Abstraccion 
