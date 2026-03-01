@@ -67,6 +67,7 @@ public class Principal{
 ~~~
 ## Diagramas de clases
 Son representaciones graficas de los objetos, se concentra aen mostrac el nombre de la clase, atributos(con encapsulamiento y tipo de dato) y metodos. 
+<img src="https://www.webyempresas.com/wp-content/uploads/2021/11/diagrama-de-clases-uml.jpg" width="300" height="600">
 
 ## Abstraccion 
 Cada entidad puede ser clasificada, se puede obserbar o imaginar los atributos que tiene, un ejemplo comun es una persona:
