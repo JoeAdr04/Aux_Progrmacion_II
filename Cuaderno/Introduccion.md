@@ -156,6 +156,7 @@ classDiagram
         - edad: int
     }
 ```
+
 Empecemos por el nombre de la clase, usando netbeans:
 En file elegimos New Proyect...
 ![nuevo proyecto](image.png)
@@ -163,6 +164,21 @@ Luego seleccionamos java with Ant
 Java ASplication
 y damos siguiente
 ![alt text](image-1.png)
-En proyect name le damos el nombre de neustra clase, en este caso Animal
+En proyect name le damos un nombre al proyecto y luego finish
+![alt text](image-4.png)
+Eso nos creara la clase principal
+![alt text](image-5.png)
 
-Eso nos creara el proyecto 
+la clase principal es cualqueira que contenga:
+~~~java
+public static void main(String[] args) {
+        // TODO code application logic here
+    }
+~~~
+todo lo que este dentro de las llaves sera lo primero que buscara el programa para compilar.
+Podemos crear una nueva clase haciendo clich cerecho en la carpeta, nuevo y java class...
+![alt text](image-6.png)
+Aqui ya le daremos el nombre a la clase que queremos crear, en ste caso Animal(*el nombre de la clase siempre empieza por mayuscula*):
+![alt text](image-7.png)
+Debemos de tener cuidado de donde creamos las clases, ya que si estamos en un paquete incorrecto no s reconocera.
+<img src="WhatsApp Image 2026-03-01 at 17.15.42.jpeg" width="240" height="360">
