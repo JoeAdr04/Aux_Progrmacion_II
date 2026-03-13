@@ -412,3 +412,223 @@ run:
 Animal[nombre: Firulais, edad: 4]
 BUILD SUCCESSFUL (total time: 0 seconds)
 ~~~
+
+#### Python
+
+~~~python
+class Animal():
+    def __init__(self, nom, ed):
+        self.__nombre = nom
+        self.__edad = ed
+    def mostrar(self):
+        print(f"Animal[nombre: {self.__nombre}, edad: {self.__edad}]")
+~~~
+
+~~~python
+class Main():
+    a = Animal("Firulais", 4)
+    print(a.mostrar())
+~~~
+
+Salida
+
+~~~
+Animal[nombre: Firulais, edad: 4]
+~~~
+
+Lo unico que hacemos es crear un metodo llamado mostrar() que imprima los atributos del objeto, luego lo llamamos con .mostrar()
+
+Pero tanto java como python tiene una llamada especial a una funcion para imprimir el objeto,
+
+Para Java usaremos la funcion especial **toString()**
+
+#### Java
+
+~~~java
+public class Animal {
+    private String nombre; //atributos
+    private int edad;
+    public Animal(String nom, int ed){ //constructor que recibe una cadena y un entero
+        this.nombre = nom; //llamada al atributo
+        this.edad = ed;
+    }
+    public void mostrar(){//metodo que solo imprime
+        System.out.println("Animal[nombre: "+this.nombre+", edad: "+this.edad+"]");
+    }
+    public String toString(){
+        return "Animal{" + "nombre=" + nombre + ", edad=" + edad + '}';
+    }
+}
+~~~
+
+~~~Java
+public class Ejemplo01 {
+    public static void main(String[] args) {
+        Animal a = new Animal("Firulais", 4);//mandamos un string y un entero
+        a.mostrar(); //llamada al metodo
+        System.out.println(a); //llamada a la funcion especial toString()
+    }
+}
+~~~
+
+Salida
+
+~~~
+run:
+Animal[nombre: Firulais, edad: 4]
+Animal{nombre=Firulais, edad=4}
+BUILD SUCCESSFUL (total time: 0 seconds)
+~~~
+
+#### Python 
+
+~~~python
+class Animal():
+    def __init__(self, nom, ed):
+        self.__nombre = nom
+        self.__edad = ed
+        
+    def mostrar(self):
+        print(f"Animal[nombre: {self.__nombre}, edad: {self.__edad}]")        
+        
+    def __str__(self):
+        return (f"Animal[nombre: {self.__nombre}, edad: {self.__edad}]")
+class Main():
+    a = Animal("Firulais", 4)
+    a.mostrar() #llamada al metodo
+    print(a) #llamada a la funcion __str__()
+~~~
+
+### Metodos y Funciones
+
+Los metodos y funciones daran el comprotamiento de nuestros objetos, que puede hacer y como lo hace, en esa parte ira las soluciones a nustros problemas plnateados, nuestros primeros metodos seran el constructor y la funcion toString() que son imprescindibles.
+
+```mermaid
+classDiagram
+    class Animal {
+        - nombre: str
+        - edad: int
+        + Animal(str, int)
+        + toString()str
+    }
+```
+
+Pero que apsa si quiero describir que mis animales crecen, cuando un animal crece se debe de cambiar su edad, eso podemos hacerlo de la amnera siguiente:
+
+```mermaid
+classDiagram
+    class Animal {
+        - nombre: str
+        - edad: int
+        + Animal(str, int)
+        + toString()str
+        + crecer()
+    }
+```
+
+~~~java
+public class Animal {
+    //atributos, constructor y toString() cosntruidoas anteriormente
+    public void crecer(){
+        this.edad = this.edad +1;
+        System.out.println("El animal cumplio un año mas");
+        System.out.println("Edad del animal: "+this.edad);
+    }
+}
+~~~
+
+~~~java
+public class Ejemplo01 {
+    public static void main(String[] args) {
+        Animal a = new Animal("Firulais", 4); //creacion del objeto
+        System.out.println(a);//muestra el objeto
+        a.crecer();//llama a la funcion crecer
+    }
+}
+~~~
+
+Salida
+
+~~~
+run:
+Animal{nombre=Firulais, edad=4}
+El animal cumplio un a�o mas
+Edad del animal: 5
+BUILD SUCCESSFUL (total time: 0 seconds)
+~~~
+
+#### Python
+
+~~~python
+class Animal():
+    #atributos, constructor y toString() cosntruidoas anteriormente
+    def crecer(self):
+        self.__edad = self.__edad+1
+        print("El animal ha cumplido un año mas")
+        print(f"Edad del animal: {self.__edad}")
+~~~
+
+~~~python
+class Main():
+    a = Animal("Firulais", 4) #creacion del objeto
+    print(a) #muestra al objeto
+    a.crecer() #llamada a la funcion crecer()
+~~~
+
+Salida
+
+~~~
+Animal[nombre: Firulais, edad: 4]
+El animal ha cumplido un año mas
+Edad del animal: 5
+~~~
+
+### Getters y Setters
+
+Los getters y los setters son funciones esppeciales que nos permiten obtener o modificar los atributos **privados** de una clase desde la clase principal, ya que las funciones get y set son **publicas**, ademas podemos modificar el comprotamiento de un get y un set ya que nosotros los definimos:
+
+#### Getter (get = obtener)
+
+Sirve para obtener el valor de un atributo cualquiera
+Si por ejemplo quiero imprimir el nombre de un animal y la edad del otro:
+
+
+
+Pero no podemos limitarnos a eso, es muy simple, que tal algo mas complicado:
+
+~~~java
+public class Animal {
+    //atributos, constructor y toString() cosntruidoas anteriormente
+    public void crecer(){
+        this.edad = this.edad +1;
+        System.out.println("El animal cumplio un año mas");
+        System.out.println("Edad del animal: "+this.edad);
+    }
+    public String getNombre(){//pido que ne retorne una cadena
+        return this.nombre;//el valor del nombre
+    }
+    public int getEdad(){//pido que retorne un entero
+        return this.edad
+    }
+}
+~~~
+
+~~~java
+public class Ejemplo01 {
+    public static void main(String[] args) {
+        Animal a = new Animal("Firulais", 4); //creacion del objeto
+        System.out.println(a);//muestra el objeto
+        a.crecer();//llama a la funcion crecer
+    }
+}
+~~~
+
+**Ejercicio 01:** Se pide crear dos instancias de animales y verificar cual de ellos es el mas viejo:
+
+~~~python
+class Main():
+    
+    a1 = Animal("michi", 5)
+    a2 = Animal("goose", 7)
+    a1.masViejo(a2)
+~~~
