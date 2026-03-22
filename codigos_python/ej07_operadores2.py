@@ -14,7 +14,7 @@ class Auto:
         self.__capacidad = capacidad
         self.__placa = placa
         
-    def aumentar(self):
+    def __pos__(self):
         self.__gasolina = self.__gasolina+5
         
     def __add__(self, other):
@@ -37,7 +37,7 @@ class Main():
     a2 = Auto(14,"verde",6,"1234lol")
     #print(f"Auto 1:{a1}")
     #print(f"Auto 2:{a2}")
-    a1.aumentar()
+    +a1
     a2+"negro"
     aux = a1-a2
     print(f"Auto 1:{a1}")
