@@ -25,6 +25,9 @@ class Celular:
         elif(isinstance(other,Celular)):
             return Celular(0,self.__duenio,256,8,other.__nroApp)
         
+    def __neg__(self):
+        self.__espacio = self.__espacio-5
+        
     def __str__(self):
         return f"nro:{self.__nroTel}, duedio:{self.__duenio}, espacio:{self.__espacio}, ram:{self.__ram}, nroApp: {self.__nroApp}"
 class Main():
@@ -32,8 +35,10 @@ class Main():
     c = Celular()
     print("antes")
     print(c)
-    #+c
-    c+20
+    +c
+    -c
+    #c+20
+    
     print("despues")
     print(c)
     
@@ -45,3 +50,4 @@ class Main():
     c2 = Celular(123,"LUIS",128,4,15)
     c3 = c+c2
     print(c3)
+    
