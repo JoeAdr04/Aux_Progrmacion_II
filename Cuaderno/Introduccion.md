@@ -632,3 +632,4 @@ class Main():
     a2 = Animal("goose", 7)
     a1.masViejo(a2)
 ~~~
+
