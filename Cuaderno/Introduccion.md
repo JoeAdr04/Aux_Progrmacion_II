@@ -83,7 +83,7 @@ Son representaciones graficas de los objetos, se concentra aen mostrac el nombre
 
 <img src="https://www.webyempresas.com/wp-content/uploads/2021/11/diagrama-de-clases-uml.jpg" width="720" height="480">
 
-<img src="introduccion\Diagrama.jpeg" width="720" height="480">
+<img src="introduccion/Diagrama.jpeg" width="720" height="480">
 
 ## Abstraccion
 
@@ -178,21 +178,21 @@ classDiagram
 Empecemos por el nombre de la clase, usando netbeans:
 En file elegimos New Proyect...
 
-![nuevo proyecto](image.png)
+![nuevo proyecto](introduccion/images/image.png)
 
 Luego seleccionamos java with Ant
 Java ASplication
 y damos siguiente
 
-![alt text](image-1.png)
+![alt text](introduccion/images/image-1.png)
 
 En proyect name le damos un nombre al proyecto y luego finish
 
-![alt text](image-4.png)
+![alt text](introduccion/images/image-4.png)
 
 Eso nos creara la clase principal
 
-![alt text](image-5.png)
+![alt text](introduccion/images/image-5.png)
 
 la clase principal es cualqueira que contenga:
 
@@ -205,42 +205,42 @@ public static void main(String[] args) {
 todo lo que este dentro de las llaves sera lo primero que buscara el programa para compilar.
 Podemos crear una nueva clase haciendo clich cerecho en la carpeta, nuevo y java class...
 
-![alt text](image-6.png)
+![alt text](introduccion/images/image-6.png)
 
 Aqui ya le daremos el nombre a la clase que queremos crear, en ste caso Animal(*el nombre de la clase siempre empieza por mayuscula*):
 
-![alt text](image-7.png)
+![alt text](introduccion/images/image-7.png)
 
 Debemos de tener cuidado de donde creamos las clases, ya que si estamos en un paquete incorrecto no se reconocera.
 
-<img src="WhatsApp Image 2026-03-01 at 17.15.42.jpeg" width="240" height="360">
+<img src="introduccion/images/WhatsApp Image 2026-03-01 at 17.15.42.jpeg" width="240" height="360">
 
 ### Python
 
 Para python no necesitamos mas que una archivo, podemos crearlo desde el idle
 
-![alt text](image-8.png)
+![alt text](introduccion/images/image-8.png)
 
 Ahora en File, New File
 
-![alt text](image-9.png)
-![alt text](image-10.png)
+![alt text](introduccion/images/image-9.png)
+![alt text](introduccion/images/image-10.png)
 
 aqui ya podemos crear codigo, y podemos guardar el archivo donde queramos, mejor si nos ordenamos por carpetas
-![alt text](image-11.png)
-![alt text](image-12.png)
+![alt text](introduccion/images/image-11.png)
+![alt text](introduccion/images/image-12.png)
 
-![alt text](image-13.png)
+![alt text](introduccion/images/image-13.png)
 
-![alt text](image-14.png)
+![alt text](introduccion/images/image-14.png)
 
 Si queremos podriamos usar el visual estudio code, para abrir mas rapido un proyecto o repositorio solo escribimos cmd en la barra de direecion
 
-![alt text](image-15.png)
+![alt text](introduccion/images/image-15.png)
 
 Esto abrira el cmd en esa ubicacion
 
-![alt text](image-16.png)
+![alt text](introduccion/images/image-16.png)
 
 Ahora solo escribimos, con espacio
 
@@ -250,7 +250,7 @@ code .
 
 Eso abrira el visual studio en esa direccion
 
-![alt text](image-17.png)
+![alt text](introduccion/images/image-17.png)
 
 ---
 
