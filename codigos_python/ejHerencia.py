@@ -12,7 +12,6 @@ class VentanaPrincipal(tk.Tk):
 		boton = tk.Button(self, text="Cerrar", command=self.destroy)
 		boton.pack()
 
-
 if __name__ == "__main__":
 	app = VentanaPrincipal()
 	app.mainloop()

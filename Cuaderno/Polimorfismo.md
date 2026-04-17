@@ -1,3 +1,7 @@
+# Polimorfismo
+
+Cuando nos referimos al polimorfismo, hablamos de las formas en las que 
+
 ## Diagrama de clases
 
 ```mermaid
