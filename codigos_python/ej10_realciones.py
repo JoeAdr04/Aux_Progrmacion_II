@@ -17,7 +17,7 @@ class Carnet(Documento):
         self.__huella = huella
         
     def __str__(self):
-        return super().__str__() + f"direccion:{self.__direccion}, huella: {self.__huella}"
+        return f"direccion:{self.__direccion}, huella: {self.__huella}"
     
 class CertifNac(Documento):
     def __init__(self, nro, pat, mat, nom, per, anio, mes, dia):
@@ -27,7 +27,8 @@ class CertifNac(Documento):
         self.__dia = dia
     def __str__(self):
         return super().__str__() + f"anio:{self.__anio}, mes:{self.__mes}, dia:{self.__dia}"
-
+    def getAnio(self):
+        return self.__anio
 class Empresa:
     def __init__(self, nit, dir):
         self.__nit = nit
@@ -35,16 +36,30 @@ class Empresa:
         self.__empleados = []
     
     def __str__(self):
-        return f"nit:{self.__nit}, direccion:{self.__direccion} Empleados: \n {self.__empleados}"
+        cad = ""
+        for e in self.__empleados:
+            cad = cad + f"{e.getCarnet()}\n"
+            
+        return f"nit:{self.__nit}, direccion:{self.__direccion} \n Empleados: \n {cad}"
     def getDir(self):
         return self.__direccion
+    
+    def setEmpleados(self, emp):
+        self.__empleados = emp
+        
+    def adicionar(self, emp:"Persona"):
+        if(emp.getEdad() >18):
+            self.__empleados.append(emp)
+        
 class Persona:
     def __init__(self, car:Carnet = None, cert:CertifNac = None, emp:Empresa=None):
         self.__carnet = car
         self.__certifNac = cert
         self.__empresa = emp
-
-    
+    def getEdad(self):
+        return 2026 - (self.__certifNac.getAnio()) 
+    def getCarnet(self):
+        return self.__carnet
     def setCert(self, cer):
         self.__certifNac = cer
         
@@ -64,11 +79,19 @@ class Main():
     p.setEmp(emp)
     
     p2 = Persona()
-    carn2 = Carnet(123, "Mamani", "Chura", "luis",p,"calle falsa",6894865)
-    cert2 = CertifNac(321, "Mamani", "Chura","luis" ,p,2000,8,15)
-    p2.setCar(carn1)
-    p2.setCert(cert1)
+    carn2 = Carnet(123, "Mamani", "Chura", "luis",p,"calle verdadera",6894865)
+    cert2 = CertifNac(321, "Mamani", "Chura","luis" ,p,2010,8,15)
+    p2.setCar(carn2)
+    p2.setCert(cert2)
     p2.setEmp(emp)
     
-    print(p)
+    #agregando empleaod a la empresa
+    #emp.adicionar(p)
+    #emp.adicionar(p2)
     
+    #print(p)
+    
+    ##Agreaa a empleados qu sean mayor de edad
+    emp.adicionar(p)
+    emp.adicionar(p2)
+    print(emp)
