@@ -17,6 +17,9 @@ class Carroceria:
 class Neumatico:
     def __init__(self, numero):
         self.__numeroAro =numero
+        
+    def __str__(self):
+        return f"numero aro:{self.__numeroAro}"
 
 class Auto:
     def __init__(self, placa, modelo, marca, potencia,color, forma,numero):
@@ -25,6 +28,14 @@ class Auto:
         self.__motor = Motor(marca, potencia)
         self.__carroceria = Carroceria(color, forma)
         self.__n1 = Neumatico(numero)
+        self.__n2 = Neumatico(numero)
+        self.__n3 = Neumatico(numero)
+        self.__n4 = Neumatico(numero)
+        
+    def getPlaca(self):
+        return self.__placa
+    def __str__(self):
+        return f"placa:{self.__placa}, modelo:{self.__modelo}, {self.__motor}, {self.__carroceria}, {self.__n1}"
 
 class Garaje:
     def __init__(self, tamanio, capacidad):
@@ -37,12 +48,23 @@ class Garaje:
             self.__autos.append(a)
         else:
             print("capacidad superada")
+            
+    def __str__(self):
+        cad = ""
+        for a in self.__autos:
+            cad = cad + a.__str__() + "\n"
+        return f"tamanio:{self.__tamanio}, capacidad:{self.__capacidad}\n"
 
     def getCant(self):
         return len(self.__autos)
     
     def getAutos(self):
         return self.__autos
+    
+    def eliminarPorPlaca(self, x):
+        for a in self.__autos:
+            if(a.getPlaca() == x): 
+                self.__autos.pop(a)
         
 class Edificio:
     def __init__(self, nomb, direccion, garage:Garaje):
@@ -52,12 +74,16 @@ class Edificio:
         
     def agregarAuto(self, a):
         self.__garage.agregarAuto(a)
+    def eliminar(self,x):
+        self.__garage.eliminarPorPlaca(x)
         
-        
-    def mover(self, otro):
-        for a in self.ge
-            
-
+    def mover(self, otro:"Edificio", x):
+        for a in self.__garage.getAutos():
+            if(a.getPlaca() == x):
+                otro.agregarAuto(a)
+                self.eliminar(x)
+    def __str__(self):
+        return f"nombre:{self.__nombre}, direccion:{self.__direccion} \n {self.__garage.__str__()}"
 class Main():
     
     g1 = Garaje(400, 30)
@@ -73,4 +99,7 @@ class Main():
     e2.agregarAuto(a3)
     e2.agregarAuto(a4)
     
+    print(a1)
+    print(a2)
     
+    e1.mover(e2, "vagoneta")
