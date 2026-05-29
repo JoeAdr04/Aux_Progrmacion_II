@@ -51,7 +51,7 @@ class Veterinaria(Generic[T]): #public class Veterinaria<K,V>
                 print("ave detectada")
             else:
                 print("mascota detectada")
-        
+                
 class Main():
     v = Veterinaria[Mascota]()
     v2 = Veterinaria[Ave]()
