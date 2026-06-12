@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
 
 class Persona(ABC):
-    @abstractmethod
+
     def saludar(self):
         pass
     
-    @abstractmethod
+
     def mostrarEdad(self):
         pass
     
@@ -18,14 +18,10 @@ class Estudiante(SerVivo, Persona):
         super().__init__(edad)
         self.__nombre = nom
         
-    def saludar(self):
-        return print(f"hola me llamo {self.__nombre}")
-    
-    def mostrarEdad(self):
-        return print(f"mi edad es de {self._edad}")
-        
+
 class Main():
     
     e = Estudiante("lUISA", 22)
-    e.saludar()
-    e.mostrarEdad()
+    p = Persona()
+    #e.saludar()
+    #e.mostrarEdad()
